@@ -2,4 +2,14 @@
     <string name="app_name">Layout-telas</string>
     <string name="header_title_main">Poupança</string>
     <string name="header_piggybank_description">Cofrinho minimalista branco com um cifrão no meio</string>
+    <string name="valor_inicial">Valor Inicial:</string>
+    <string name="hint_valor_inicial">Valor em R$ Ex: 1700.00</string>
+    <string name="aplicacao_mensal">Aplicação mensal:</string>
+    <string name="hint_aplicacao_mensal">Ex: 100.00</string>
+    <string name="tempo_da_aplicacao">Tempo da aplicação:</string>
+    <string name="hint_tempo_da_aplicacao">Em meses</string>
+    <string name="taxa">Taxa</string>
+    <string name="hint_taxa">Ex: 0.02</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="btn_proximo_layout">Próximo Layout</string>
 </resources>
