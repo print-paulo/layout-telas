@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Layout-telas</string>
     <string name="header_title_main">Poupança</string>
+    <string name="header_title_quiz_transito">Quiz de trânsito</string>
     <string name="header_piggybank_description">Cofrinho minimalista branco com um cifrão no meio</string>
     <string name="valor_inicial">Valor Inicial:</string>
     <string name="hint_valor_inicial">Valor em R$ Ex: 1700.00</string>

@@ -187,6 +187,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
                     android:backgroundTint="@color/black"
+                    android:onClick="setBtnProximoLayout"
                     android:text="@string/btn_proximo_layout"
                     android:textColor="@color/white"
                     app:cornerRadius="0dp"
