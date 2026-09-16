@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Layout-telas</string>
+    <string name="header_title_main">Poupança</string>
+    <string name="header_piggybank_description">Cofrinho minimalista branco com um cifrão no meio</string>
 </resources>
