@@ -13,4 +13,6 @@
     <string name="hint_taxa">Ex: 0.02</string>
     <string name="btn_calcular">Calcular</string>
     <string name="btn_proximo_layout">Próximo Layout</string>
+    <string name="description_placa">Placa de transito atual</string>
+    <string name="proxima_pergunta">Próxima pergunta</string>
 </resources>
