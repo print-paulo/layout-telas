@@ -107,7 +107,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtQuestion" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtQuestion"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/btnOption2"
@@ -121,7 +122,8 @@
                     app:cornerRadius="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnOption1" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnOption1"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/btnOption3"
@@ -135,7 +137,8 @@
                     app:cornerRadius="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnOption2" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnOption2"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/btnOption4"
@@ -149,7 +152,8 @@
                     app:cornerRadius="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnOption3" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnOption3"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/btnProximaPergunta"
@@ -168,13 +172,27 @@
                     app:layout_constraintTop_toBottomOf="@+id/btnOption4" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnProximoLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/btn_background_tint"
+                    android:text="@string/btn_proximo_layout"
+                    android:textColor="@color/text_disabled"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/btnVoltar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
                     android:backgroundTint="@color/btn_background_tint"
-                    android:text="@string/btn_proximo_layout"
-                    android:textColor="@color/text_disabled"
+                    android:onClick="setBtnVoltar"
+                    android:text="@string/btn_voltar"
+                    android:textColor="@color/btn_text_color"
                     app:cornerRadius="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

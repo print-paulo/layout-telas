@@ -15,4 +15,5 @@
     <string name="btn_proximo_layout">Próximo Layout</string>
     <string name="description_placa">Placa de transito atual</string>
     <string name="proxima_pergunta">Próxima pergunta</string>
+    <string name="btn_voltar">Voltar</string>
 </resources>
