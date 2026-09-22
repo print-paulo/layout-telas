@@ -24,11 +24,12 @@ public class QuizDeTransito extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_de_transito);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            // Muda as cores das barras de status
+            WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView()).setAppearanceLightStatusBars(false);
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // Muda as cores das barras de status
-        WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView()).setAppearanceLightStatusBars(false);
+
 
         // Definição de variáveis do layout
         txtCurrentQuestion = findViewById(R.id.txtCurrentQuestion);
