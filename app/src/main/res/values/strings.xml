@@ -16,4 +16,5 @@
     <string name="description_placa">Placa de transito atual</string>
     <string name="proxima_pergunta">Próxima pergunta</string>
     <string name="btn_voltar">Voltar</string>
+    <string name="pergunta">O que significa essa placa?</string>
 </resources>
