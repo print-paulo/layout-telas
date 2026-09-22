@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_disabled">#E0E0E0</color>
+    <color name="selected">#1E1E37</color>
     <color name="grey">#807F7F7F</color>
     <color name="hint">#6F6F6F</color>
 </resources>

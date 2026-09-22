@@ -1,5 +1,6 @@
 package com.example.layout_telas;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
@@ -35,9 +37,10 @@ public class QuizDeTransito extends AppCompatActivity {
     Button btnProximaPergunta, btnProximoLayout, btnVoltar;
 
     // Estado do Quiz
-    private List<Pergunta> perguntas = new ArrayList<>();
+    private final List<Pergunta> perguntas = new ArrayList<>();
     private int perguntaAtual = 0;
     private int indiceSelecionado = -1; // qual botão tá selecionado na hora
+    private int pontuacao = 0;
     private boolean respondida = false;
 
     @Override
@@ -66,6 +69,23 @@ public class QuizDeTransito extends AppCompatActivity {
         btnProximoLayout = findViewById(R.id.btnProximoLayout);
         btnVoltar = findViewById(R.id.btnVoltar);
 
+        for (int i = 0; i < botoesAlternativa.length; i++) {
+            final int indiceClicado = i;
+            botoesAlternativa[i].setOnClickListener(v -> selecionar(indiceClicado));
+        }
+
+        // Botão único: 1º clique confirma a resposta, 2º clique avança
+        btnProximaPergunta.setOnClickListener(v -> {
+            if (!respondida) {
+                confirmarResposta();
+            } else if (perguntaAtual < perguntas.size() - 1) {
+                perguntaAtual++;
+                mostrarPergunta();
+            } else {
+                mostrarPergunta();
+            }
+        });
+
         montarPergunta();
         mostrarPergunta();
     }
@@ -73,28 +93,27 @@ public class QuizDeTransito extends AppCompatActivity {
     private void montarPergunta() {
         // Pergunta placa de Proibido Estacionar
         perguntas.add(new Pergunta(
-                new String[]{"" +
-                        "Curva Acentuada a Esquerda", "Sentido Proibido", "Proibido Estacionar","Velocidade Máxima"},
+                new String[]{"Curva Acentuada a Esquerda", "Sentido Proibido", "Proibido Estacionar", "Velocidade Máxima"},
                 2
         ));
         // Pergunta placa de Curva Acentuada a Esquerda
         perguntas.add(new Pergunta(
-                new String[]{"Proibido Estacionar", "Curva Acentuada a Esquerda", "Proibido Ultrapassar","Sentido Proibid"},
+                new String[]{"Proibido Estacionar", "Curva Acentuada a Esquerda", "Proibido Ultrapassar", "Sentido Proibido"},
                 1
         ));
         // Pergunta placa de Proibido Ultrapassar
         perguntas.add(new Pergunta(
-                new String[]{"Proibido Estacionar", "Sentido Proibido", "Proibido Estacionar","Proibido Ultrapassar"},
+                new String[]{"Sentido Proibido", "Velocidade Máxima", "Proibido Estacionar", "Proibido Ultrapassar"},
                 3
         ));
         // Pergunta da placa de Velocidade Máxima
         perguntas.add(new Pergunta(
-                new String[]{"Proibido Ultrapassar", "Proibido Estacionar", "Curva Acentuada a Esquerda","Velocidade Máxima"},
+                new String[]{"Proibido Ultrapassar", "Proibido Estacionar", "Curva Acentuada a Esquerda", "Velocidade Máxima"},
                 3
         ));
         // Pergunta da placa de Sentido Proíbido
         perguntas.add(new Pergunta(
-                new String[]{"Sentido proíbido", "Sentido Estacionar", "Velocidade Máxima","Proibido Ultrapassar"},
+                new String[]{"Sentido proíbido", "Proibido Estacionar", "Velocidade Máxima", "Proibido Ultrapassar"},
                 0
         ));
     }
@@ -103,6 +122,8 @@ public class QuizDeTransito extends AppCompatActivity {
         respondida = false;
         indiceSelecionado = -1;
         btnProximaPergunta.setEnabled(false);
+        btnProximaPergunta.setText(R.string.responder);
+
         switch (perguntaAtual) {
             case 0: {
                 txtCurrentQuestion.setText(R.string.questao_1);
@@ -112,6 +133,7 @@ public class QuizDeTransito extends AppCompatActivity {
             case 1: {
                 txtCurrentQuestion.setText(R.string.questao_2);
                 imgPlacaTransito.setImageResource(R.drawable.placa_curvaacentuadaaesquerda);
+                break;
             }
             case 2: {
                 txtCurrentQuestion.setText(R.string.questao_3);
@@ -138,7 +160,40 @@ public class QuizDeTransito extends AppCompatActivity {
         for (int i = 0; i < botoesAlternativa.length; i++) {
             botoesAlternativa[i].setText(p.alternativas[i]);
             botoesAlternativa[i].setEnabled(true);
+            botoesAlternativa[i].setBackgroundColor(ContextCompat.getColor(this, R.color.black));
         }
+    }
+
+    private void selecionar(int indice) {
+        indiceSelecionado = indice;
+        for (int i = 0; i < botoesAlternativa.length; i++) {
+            botoesAlternativa[i].setBackgroundColor(
+                    i == indice ? ContextCompat.getColor(
+                            this, R.color.selected) : ContextCompat.getColor(this, R.color.black));
+        }
+        btnProximaPergunta.setEnabled(true);
+    }
+
+    private void confirmarResposta() {
+        Pergunta p = perguntas.get(perguntaAtual);
+        respondida = true;
+
+        for (Button b : botoesAlternativa) {
+            b.setEnabled(false); // Não deixa trocar após confirmar
+        }
+
+        // Destaca a alternativa correta em verde
+        botoesAlternativa[p.indiceCorreta].setBackgroundColor(Color.parseColor("#4CAF50"));
+
+        if (indiceSelecionado == p.indiceCorreta) {
+            pontuacao++;
+        } else if (indiceSelecionado != -1) {
+            // Destaca em vermelho a errada que foi escolhida
+            botoesAlternativa[indiceSelecionado].setBackgroundColor(Color.parseColor("#F44336"));
+        }
+
+        btnProximaPergunta.setText(perguntaAtual < perguntas.size() - 1
+                ? "Próxima Pergunta" : "Reiniciar Quiz");
     }
 
     public void setBtnProximoLayout(View view) {
