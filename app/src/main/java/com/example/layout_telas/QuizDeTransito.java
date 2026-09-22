@@ -65,12 +65,16 @@ public class QuizDeTransito extends AppCompatActivity {
         btnProximaPergunta = findViewById(R.id.btnProximaPergunta);
         btnProximoLayout = findViewById(R.id.btnProximoLayout);
         btnVoltar = findViewById(R.id.btnVoltar);
+
+        montarPergunta();
+        mostrarPergunta();
     }
 
     private void montarPergunta() {
         // Pergunta placa de Proibido Estacionar
         perguntas.add(new Pergunta(
-                new String[]{"PCurva Acentuada a Esquerda", "Sentido Proibido", "Proibido Estacionar","Velocidade Máxima"},
+                new String[]{"" +
+                        "Curva Acentuada a Esquerda", "Sentido Proibido", "Proibido Estacionar","Velocidade Máxima"},
                 2
         ));
         // Pergunta placa de Curva Acentuada a Esquerda
@@ -93,6 +97,48 @@ public class QuizDeTransito extends AppCompatActivity {
                 new String[]{"Sentido proíbido", "Sentido Estacionar", "Velocidade Máxima","Proibido Ultrapassar"},
                 0
         ));
+    }
+
+    private void mostrarPergunta() {
+        respondida = false;
+        indiceSelecionado = -1;
+        btnProximaPergunta.setEnabled(false);
+        switch (perguntaAtual) {
+            case 0: {
+                txtCurrentQuestion.setText(R.string.questao_1);
+                imgPlacaTransito.setImageResource(R.drawable.placa_proibidoestacionar);
+                break;
+            }
+            case 1: {
+                txtCurrentQuestion.setText(R.string.questao_2);
+                imgPlacaTransito.setImageResource(R.drawable.placa_curvaacentuadaaesquerda);
+            }
+            case 2: {
+                txtCurrentQuestion.setText(R.string.questao_3);
+                imgPlacaTransito.setImageResource(R.drawable.placa_proibidoultrapassar);
+                break;
+            }
+            case 3: {
+                txtCurrentQuestion.setText(R.string.questao_4);
+                imgPlacaTransito.setImageResource(R.drawable.placa_velocidademax);
+                break;
+            }
+            case 4: {
+                txtCurrentQuestion.setText(R.string.questao_5);
+                imgPlacaTransito.setImageResource(R.drawable.placa_sentidoproibido);
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+
+        Pergunta p = perguntas.get(perguntaAtual);
+
+        for (int i = 0; i < botoesAlternativa.length; i++) {
+            botoesAlternativa[i].setText(p.alternativas[i]);
+            botoesAlternativa[i].setEnabled(true);
+        }
     }
 
     public void setBtnProximoLayout(View view) {

@@ -17,4 +17,9 @@
     <string name="proxima_pergunta">Próxima pergunta</string>
     <string name="btn_voltar">Voltar</string>
     <string name="pergunta">O que significa essa placa?</string>
+    <string name="questao_1">Questão 1</string>
+    <string name="questao_2">Questão 2</string>
+    <string name="questao_3">Questão 3</string>
+    <string name="questao_4">Questão 4</string>
+    <string name="questao_5">Questão 5</string>
 </resources>
