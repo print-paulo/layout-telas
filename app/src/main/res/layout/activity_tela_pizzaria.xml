@@ -60,12 +60,258 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutHeader" >
+            app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutHeader">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ConstraintLayoutBackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdBannerPizzaria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgBannerPizzaria"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/banner_pizzaria_description"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/pizzaria_banner" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/escolha_seu_sabor"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/crdOptions"
+                    app:layout_constraintTop_toBottomOf="@+id/crdBannerPizzaria" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdOptions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitle">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ConstraintLayoutOptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F9F6EF">
+
+                        <ImageView
+                            android:id="@+id/imgPizzaBacon"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="24dp"
+                            android:contentDescription="@string/pizza_bacon_description"
+                            app:layout_constraintEnd_toStartOf="@+id/imgPizzaMucarela"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/pizza_bacon" />
+
+                        <TextView
+                            android:id="@+id/txtPizzaBacon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/pizza_bacon_price"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaBacon"
+                            app:layout_constraintTop_toBottomOf="@+id/imgPizzaBacon" />
+
+                        <EditText
+                            android:id="@+id/edtPizzaBacon"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:ems="10"
+                            android:hint="@string/quantidade"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:textColorHint="@color/hint"
+                            app:layout_constraintEnd_toEndOf="@+id/imgPizzaBacon"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaBacon"
+                            app:layout_constraintTop_toBottomOf="@+id/txtPizzaBacon"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        <ImageView
+                            android:id="@+id/imgPizzaMucarela"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:contentDescription="@string/pizza_mucarela_description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgPizzaBacon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/pizza_mucarela" />
+
+                        <TextView
+                            android:id="@+id/txtPizzaMucarela"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            android:importantForAutofill="no"
+                            android:text="@string/pizza_mucarela_price"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaMucarela"
+                            app:layout_constraintTop_toBottomOf="@+id/imgPizzaMucarela" />
+
+                        <EditText
+                            android:id="@+id/edtPizzaMucarela"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:ems="10"
+                            android:hint="@string/quantidade"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:textColorHint="@color/hint"
+                            app:layout_constraintEnd_toEndOf="@+id/imgPizzaMucarela"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaMucarela"
+                            app:layout_constraintTop_toBottomOf="@+id/txtPizzaMucarela" />
+
+                        <ImageView
+                            android:id="@+id/imgPizzaPeperoni"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:contentDescription="@string/pizza_peperoni_description"
+                            app:layout_constraintEnd_toStartOf="@+id/imgPizzaCalabresa"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/edtPizzaBacon"
+                            app:srcCompat="@drawable/pizza_peperoni" />
+
+                        <TextView
+                            android:id="@+id/txtPizzaPeperoni"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:importantForAutofill="no"
+                            android:text="@string/pizza_peperoni_price"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaPeperoni"
+                            app:layout_constraintTop_toBottomOf="@+id/imgPizzaPeperoni" />
+
+                        <EditText
+                            android:id="@+id/edtPizzaPeperoni"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="24dp"
+                            android:ems="10"
+                            android:hint="@string/quantidade"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:textColorHint="@color/hint"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/imgPizzaPeperoni"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaPeperoni"
+                            app:layout_constraintTop_toBottomOf="@+id/txtPizzaPeperoni" />
+
+                        <ImageView
+                            android:id="@+id/imgPizzaCalabresa"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            android:contentDescription="@string/pizza_calabresa_description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgPizzaPeperoni"
+                            app:layout_constraintTop_toBottomOf="@+id/edtPizzaMucarela"
+                            app:srcCompat="@drawable/pizza_calabresa" />
+
+                        <TextView
+                            android:id="@+id/txtPizzaCalabresa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:importantForAutofill="no"
+                            android:text="@string/pizza_calabresa_price"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaCalabresa"
+                            app:layout_constraintTop_toBottomOf="@+id/imgPizzaCalabresa" />
+
+                        <EditText
+                            android:id="@+id/edtPizzaCalabresa"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="24dp"
+                            android:ems="10"
+                            android:hint="@string/quantidade"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:textColorHint="@color/hint"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/imgPizzaCalabresa"
+                            app:layout_constraintStart_toStartOf="@+id/imgPizzaCalabresa"
+                            app:layout_constraintTop_toBottomOf="@+id/txtPizzaCalabresa" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/crdOptions"
+                    app:layout_constraintStart_toStartOf="@+id/crdOptions"
+                    app:layout_constraintTop_toBottomOf="@+id/crdOptions" />
+
+                <Button
+                    android:id="@+id/btnFazerPedido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/btn_background_tint"
+                    android:enabled="false"
+                    android:text="@string/btn_fazer_pedido"
+                    android:textColor="@color/btn_text_color"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintEnd_toEndOf="@+id/crdOptions"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintStart_toStartOf="@+id/crdOptions"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTotal" />
+
+                <Button
+                    android:id="@+id/btnProximoLayoutPizzaria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="@color/btn_background_tint"
+                    android:text="@string/btn_proximo_layout"
+                    android:textColor="@color/btn_text_color"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

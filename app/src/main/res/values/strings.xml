@@ -26,4 +26,16 @@
     <string name="questao_4">Questão 4</string>
     <string name="questao_5">Questão 5</string>
     <string name="responder">Responder</string>
+    <string name="banner_pizzaria_description">Banner de pizzaria escrito Pizzaria Luig: Pizza artesanal e sabor tradicional</string>
+    <string name="escolha_seu_sabor">Escolha seu sabor e quantidade:</string>
+    <string name="pizza_bacon_description">Pizza de bacon vista de cima</string>
+    <string name="pizza_bacon_price">Pizza de Bacon R$33,99</string>
+    <string name="pizza_peperoni_price">Pizza de Peperoni R$32,99</string>
+    <string name="pizza_mucarela_price">Pizza de Muçarela R$31,99</string>
+    <string name="pizza_calabresa_price">Pizza de Calabresa R$29,99</string>
+    <string name="pizza_peperoni_description">Pizza de peperoni vista de cima</string>
+    <string name="pizza_mucarela_description">Pizza de muçarela vista de cima</string>
+    <string name="pizza_calabresa_description">Pizza de calabresa vista de cima</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="btn_fazer_pedido">Fazer pedido</string>
 </resources>
