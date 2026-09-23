@@ -221,7 +221,7 @@
 
                         <EditText
                             android:id="@+id/edtContaTotal"
-                            android:layout_width="48dp"
+                            android:layout_width="60dp"
                             android:layout_height="48dp"
                             android:layout_marginEnd="16dp"
                             android:ems="10"
@@ -244,7 +244,7 @@
 
                         <EditText
                             android:id="@+id/edtValorPorPessoa"
-                            android:layout_width="48dp"
+                            android:layout_width="60dp"
                             android:layout_height="48dp"
                             android:layout_marginEnd="16dp"
                             android:ems="10"
@@ -253,16 +253,6 @@
                             app:layout_constraintBottom_toBottomOf="@+id/txtValorPorPessoa"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/txtValorPorPessoa" />
-
-                        <TextView
-                            android:id="@+id/txtValorTotal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:textSize="18sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/txtValorPorPessoa" />
 
                         <Button
                             android:id="@+id/btnCalcularContaFinal"
@@ -277,7 +267,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/txtValorTotal" />
+                            app:layout_constraintTop_toBottomOf="@+id/txtValorPorPessoa" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
