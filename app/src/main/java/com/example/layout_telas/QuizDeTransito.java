@@ -1,5 +1,6 @@
 package com.example.layout_telas;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -197,7 +198,8 @@ public class QuizDeTransito extends AppCompatActivity {
     }
 
     public void setBtnProximoLayout(View view) {
-        // a fazer
+        Intent it = new Intent(getApplicationContext(), TelaPizzaria.class);
+        startActivity(it);
     }
 
     public void setBtnVoltar(View view) {
