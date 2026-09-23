@@ -15,9 +15,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ConstraintLayoutHeader"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -57,12 +56,232 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutHeader" >
+            app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutHeader">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ConstraintLayoutBackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdBannerChurrascaria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgBannerChurrascaria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/banner_churrascaria_description"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/banner_churrascaria" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtCalcularComanda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/calcular_comanda"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/crdBannerChurrascaria" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdCalcularComanda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCalcularComanda">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ConstraintLayoutCalcularValor"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/txtConsumoTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="64dp"
+                            android:gravity="center"
+                            android:text="@string/consumo_total"
+                            app:layout_constraintEnd_toStartOf="@+id/edtConsumoTotal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/edtConsumoTotal"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="@null"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtConsumoTotal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtConsumoTotal" />
+
+                        <TextView
+                            android:id="@+id/txtCouvertArtistico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/couvert_artistico"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtConsumoTotal" />
+
+                        <EditText
+                            android:id="@+id/edtCouvertArtistico"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtCouvertArtistico"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtCouvertArtistico" />
+
+                        <TextView
+                            android:id="@+id/txtDividirContaPor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/dividir_conta_por"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtCouvertArtistico" />
+
+                        <EditText
+                            android:id="@+id/edtDividirContaPor"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtDividirContaPor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtDividirContaPor" />
+
+                        <TextView
+                            android:id="@+id/txtTaxaServico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/taxa_de_servico"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDividirContaPor" />
+
+                        <EditText
+                            android:id="@+id/edtTaxaServico"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtTaxaServico"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtTaxaServico" />
+
+                        <TextView
+                            android:id="@+id/txtContaTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/conta_total"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtTaxaServico" />
+
+                        <EditText
+                            android:id="@+id/edtContaTotal"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtContaTotal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtContaTotal" />
+
+                        <TextView
+                            android:id="@+id/txtValorPorPessoa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/valor_por_pessoa"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtContaTotal" />
+
+                        <EditText
+                            android:id="@+id/edtValorPorPessoa"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtValorPorPessoa"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtValorPorPessoa" />
+
+                        <TextView
+                            android:id="@+id/txtValorTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtValorPorPessoa" />
+
+                        <Button
+                            android:id="@+id/btnCalcularContaFinal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:backgroundTint="@color/btn_background_tint"
+                            android:text="@string/btn_calcular_conta_final"
+                            android:textColor="@color/btn_text_color"
+                            app:cornerRadius="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtValorTotal" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

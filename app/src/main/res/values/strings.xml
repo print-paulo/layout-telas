@@ -39,4 +39,13 @@
     <string name="quantidade">Quantidade</string>
     <string name="btn_fazer_pedido">Fazer pedido</string>
     <string name="header_tile_calcular_comanda">Calcular Comanda</string>
+    <string name="banner_churrascaria_description">Banner de churrascaria escrito Churrascaria Luig e barbosa</string>
+    <string name="calcular_comanda">Calcular comanda:</string>
+    <string name="consumo_total">Consumo total R$:</string>
+    <string name="couvert_artistico">Couvert artístico R$:</string>
+    <string name="dividir_conta_por">Dividir conta por:</string>
+    <string name="btn_calcular_conta_final">Calcular Conta Final</string>
+    <string name="taxa_de_servico">Taxa de serviço(10%) R$:</string>
+    <string name="conta_total">Conta total R$:</string>
+    <string name="valor_por_pessoa">Valor por pessoa R$:</string>
 </resources>
