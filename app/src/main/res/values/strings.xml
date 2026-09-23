@@ -38,4 +38,5 @@
     <string name="pizza_calabresa_description">Pizza de calabresa vista de cima</string>
     <string name="quantidade">Quantidade</string>
     <string name="btn_fazer_pedido">Fazer pedido</string>
+    <string name="header_tile_calcular_comanda">Calcular Comanda</string>
 </resources>

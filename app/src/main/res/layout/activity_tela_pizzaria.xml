@@ -304,6 +304,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="@color/btn_background_tint"
+                    android:onClick="setBtnProximoLayoutPizzaria"
                     android:text="@string/btn_proximo_layout"
                     android:textColor="@color/btn_text_color"
                     app:cornerRadius="0dp"
