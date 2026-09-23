@@ -35,7 +35,7 @@ public class QuizDeTransito extends AppCompatActivity {
     TextView txtCurrentQuestion;
     ImageView imgPlacaTransito;
     Button[] botoesAlternativa;
-    Button btnProximaPergunta, btnProximoLayout, btnVoltar;
+    Button btnProximaPergunta, btnProximoLayoutQuiz, btnVoltar;
 
     // Estado do Quiz
     private final List<Pergunta> perguntas = new ArrayList<>();
@@ -67,7 +67,7 @@ public class QuizDeTransito extends AppCompatActivity {
                 findViewById(R.id.btnOption4)
         };
         btnProximaPergunta = findViewById(R.id.btnProximaPergunta);
-        btnProximoLayout = findViewById(R.id.btnProximoLayout);
+        btnProximoLayoutQuiz = findViewById(R.id.btnProximoLayoutQuiz);
         btnVoltar = findViewById(R.id.btnVoltar);
 
         for (int i = 0; i < botoesAlternativa.length; i++) {
@@ -197,7 +197,7 @@ public class QuizDeTransito extends AppCompatActivity {
                 ? "Próxima Pergunta" : "Reiniciar Quiz");
     }
 
-    public void setBtnProximoLayout(View view) {
+    public void setBtnProximoLayoutQuiz(View view) {
         Intent it = new Intent(getApplicationContext(), TelaPizzaria.class);
         startActivity(it);
     }

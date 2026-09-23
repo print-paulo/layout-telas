@@ -173,12 +173,12 @@
                     app:layout_constraintTop_toBottomOf="@+id/btnOption4" />
 
                 <Button
-                    android:id="@+id/btnProximoLayout"
+                    android:id="@+id/btnProximoLayoutQuiz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/btn_background_tint"
-                    android:onClick="setBtnProximoLayout"
+                    android:onClick="setBtnProximoLayoutQuiz"
                     android:text="@string/btn_proximo_layout"
                     android:textColor="@color/text_disabled"
                     app:cornerRadius="0dp"
